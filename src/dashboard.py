@@ -288,7 +288,7 @@ JS = """
 """
 
 # Logo: soundwave bars + flight swoosh. Swap this block for a real client
-# logo (SVG or <img>) — the layout holds either way.
+# logo (SVG or <img>) - the layout holds either way.
 LOGO = """<svg width="{s}" height="{s}" viewBox="0 0 48 48" aria-label="Vireo logo">
 <defs><linearGradient id="lg{u}" x1="0" y1="0" x2="1" y2="1">
 <stop offset="0" stop-color="#1cc39e"/><stop offset="1" stop-color="#0a5847"/></linearGradient></defs>

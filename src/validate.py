@@ -1,7 +1,7 @@
 """How do we know the classifier works?
 
 Tickets where the category is NOT 'Other' carry a tag the intake bot set and
-the agent could correct at closure (policy section 2) — the closest thing to
+the agent could correct at closure (policy section 2) - the closest thing to
 ground truth in the pack. We run the rules classifier on every one of those
 tickets and measure agreement, overall and per category, counting only the
 tickets where the classifier was confident (it abstains to 'Other' otherwise).
