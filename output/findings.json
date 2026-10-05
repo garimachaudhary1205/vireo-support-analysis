@@ -1,0 +1,557 @@
+{
+  "data_quality": {
+    "legacy_tz_shifted": 3189
+  },
+  "monthly": {
+    "months": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06"
+    ],
+    "csat": [
+      3.48,
+      3.4,
+      3.58,
+      3.39,
+      3.57,
+      3.76,
+      3.47,
+      3.41,
+      3.42,
+      3.6,
+      3.47,
+      3.29,
+      3.12,
+      2.95,
+      3.13,
+      3.23,
+      3.37,
+      3.4
+    ],
+    "volume": [
+      311,
+      328,
+      390,
+      368,
+      384,
+      366,
+      425,
+      570,
+      582,
+      659,
+      824,
+      1034,
+      1174,
+      1196,
+      1072,
+      788,
+      693,
+      586
+    ],
+    "charging_share_pct": [
+      6.4,
+      6.4,
+      5.9,
+      7.1,
+      6.8,
+      4.6,
+      5.9,
+      6.7,
+      5.5,
+      7.0,
+      8.1,
+      11.2,
+      15.2,
+      19.6,
+      20.2,
+      18.4,
+      11.7,
+      7.2
+    ]
+  },
+  "lots": [
+    {
+      "lot": "PL2-2504-1",
+      "orders": 9,
+      "tickets": 4,
+      "tickets_per_order": 0.44,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2504-2",
+      "orders": 8,
+      "tickets": 6,
+      "tickets_per_order": 0.75,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2504-3",
+      "orders": 12,
+      "tickets": 5,
+      "tickets_per_order": 0.42,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2504-4",
+      "orders": 7,
+      "tickets": 4,
+      "tickets_per_order": 0.57,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2505-1",
+      "orders": 39,
+      "tickets": 22,
+      "tickets_per_order": 0.56,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2505-2",
+      "orders": 34,
+      "tickets": 14,
+      "tickets_per_order": 0.41,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2505-3",
+      "orders": 32,
+      "tickets": 23,
+      "tickets_per_order": 0.72,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2505-4",
+      "orders": 30,
+      "tickets": 13,
+      "tickets_per_order": 0.43,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2506-1",
+      "orders": 55,
+      "tickets": 20,
+      "tickets_per_order": 0.36,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2506-2",
+      "orders": 46,
+      "tickets": 24,
+      "tickets_per_order": 0.52,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2506-3",
+      "orders": 34,
+      "tickets": 17,
+      "tickets_per_order": 0.5,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2506-4",
+      "orders": 49,
+      "tickets": 20,
+      "tickets_per_order": 0.41,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2507-1",
+      "orders": 69,
+      "tickets": 37,
+      "tickets_per_order": 0.54,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2507-2",
+      "orders": 60,
+      "tickets": 36,
+      "tickets_per_order": 0.6,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2507-3",
+      "orders": 83,
+      "tickets": 41,
+      "tickets_per_order": 0.49,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2507-4",
+      "orders": 64,
+      "tickets": 26,
+      "tickets_per_order": 0.41,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2508-1",
+      "orders": 109,
+      "tickets": 56,
+      "tickets_per_order": 0.51,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2508-2",
+      "orders": 110,
+      "tickets": 51,
+      "tickets_per_order": 0.46,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2508-3",
+      "orders": 115,
+      "tickets": 60,
+      "tickets_per_order": 0.52,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2508-4",
+      "orders": 104,
+      "tickets": 48,
+      "tickets_per_order": 0.46,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2509-1",
+      "orders": 153,
+      "tickets": 64,
+      "tickets_per_order": 0.42,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2509-2",
+      "orders": 153,
+      "tickets": 91,
+      "tickets_per_order": 0.59,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2509-3",
+      "orders": 144,
+      "tickets": 71,
+      "tickets_per_order": 0.49,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2509-4",
+      "orders": 123,
+      "tickets": 61,
+      "tickets_per_order": 0.5,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2510-1",
+      "orders": 193,
+      "tickets": 163,
+      "tickets_per_order": 0.84,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2510-2",
+      "orders": 186,
+      "tickets": 168,
+      "tickets_per_order": 0.9,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2510-3",
+      "orders": 208,
+      "tickets": 171,
+      "tickets_per_order": 0.82,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2510-4",
+      "orders": 194,
+      "tickets": 158,
+      "tickets_per_order": 0.81,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2511-1",
+      "orders": 152,
+      "tickets": 154,
+      "tickets_per_order": 1.01,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2511-2",
+      "orders": 167,
+      "tickets": 128,
+      "tickets_per_order": 0.77,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2511-3",
+      "orders": 177,
+      "tickets": 146,
+      "tickets_per_order": 0.82,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2511-4",
+      "orders": 183,
+      "tickets": 171,
+      "tickets_per_order": 0.93,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2512-1",
+      "orders": 135,
+      "tickets": 127,
+      "tickets_per_order": 0.94,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2512-2",
+      "orders": 125,
+      "tickets": 107,
+      "tickets_per_order": 0.86,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2512-3",
+      "orders": 123,
+      "tickets": 93,
+      "tickets_per_order": 0.76,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2512-4",
+      "orders": 136,
+      "tickets": 115,
+      "tickets_per_order": 0.85,
+      "bad": true
+    },
+    {
+      "lot": "PL2-2601-1",
+      "orders": 89,
+      "tickets": 50,
+      "tickets_per_order": 0.56,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2601-2",
+      "orders": 78,
+      "tickets": 33,
+      "tickets_per_order": 0.42,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2601-3",
+      "orders": 99,
+      "tickets": 50,
+      "tickets_per_order": 0.51,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2601-4",
+      "orders": 74,
+      "tickets": 30,
+      "tickets_per_order": 0.41,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2602-1",
+      "orders": 44,
+      "tickets": 24,
+      "tickets_per_order": 0.55,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2602-2",
+      "orders": 45,
+      "tickets": 21,
+      "tickets_per_order": 0.47,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2602-3",
+      "orders": 36,
+      "tickets": 17,
+      "tickets_per_order": 0.47,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2602-4",
+      "orders": 46,
+      "tickets": 16,
+      "tickets_per_order": 0.35,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2603-1",
+      "orders": 53,
+      "tickets": 21,
+      "tickets_per_order": 0.4,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2603-2",
+      "orders": 37,
+      "tickets": 19,
+      "tickets_per_order": 0.51,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2603-3",
+      "orders": 50,
+      "tickets": 17,
+      "tickets_per_order": 0.34,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2603-4",
+      "orders": 44,
+      "tickets": 15,
+      "tickets_per_order": 0.34,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2604-1",
+      "orders": 37,
+      "tickets": 9,
+      "tickets_per_order": 0.24,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2604-2",
+      "orders": 25,
+      "tickets": 7,
+      "tickets_per_order": 0.28,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2604-3",
+      "orders": 35,
+      "tickets": 11,
+      "tickets_per_order": 0.31,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2604-4",
+      "orders": 31,
+      "tickets": 11,
+      "tickets_per_order": 0.35,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2605-1",
+      "orders": 22,
+      "tickets": 4,
+      "tickets_per_order": 0.18,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2605-2",
+      "orders": 18,
+      "tickets": 2,
+      "tickets_per_order": 0.11,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2605-3",
+      "orders": 14,
+      "tickets": 0,
+      "tickets_per_order": 0.0,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2605-4",
+      "orders": 16,
+      "tickets": 7,
+      "tickets_per_order": 0.44,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2606-1",
+      "orders": 2,
+      "tickets": 0,
+      "tickets_per_order": 0.0,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2606-3",
+      "orders": 2,
+      "tickets": 1,
+      "tickets_per_order": 0.5,
+      "bad": false
+    },
+    {
+      "lot": "PL2-2606-4",
+      "orders": 3,
+      "tickets": 0,
+      "tickets_per_order": 0.0,
+      "bad": false
+    }
+  ],
+  "lot_summary": {
+    "baseline_tickets_per_order": 0.46,
+    "bad_lot_orders": 1979,
+    "bad_lot_tickets": 1701,
+    "excess_tickets": 783
+  },
+  "defect_wave_cost_inr": {
+    "contacts": 470570.0,
+    "refunds": 452022.0,
+    "replacements": 1148420.0,
+    "sla_credits": 53550.0,
+    "tickets": 1701,
+    "total": 2124562
+  },
+  "repeat_contacts": {
+    "repeat": 3051,
+    "resolved": 11183,
+    "rate_pct": 27.3,
+    "cost_18mo": 844740
+  },
+  "sla": {
+    "breaches": 1014,
+    "credits_inr": 354900
+  },
+  "transfers": {
+    "count": 1215,
+    "cost_inr": 370575
+  },
+  "double_dip_tickets": [
+    "TK-240833",
+    "TK-244004",
+    "TK-245019",
+    "TK-247304",
+    "TK-250859",
+    "TK-253280"
+  ],
+  "other_reclassified": {
+    "Audio Quality": 38,
+    "Delivery & Shipping": 385,
+    "Warranty & Repair": 69,
+    "Product Enquiry": 36,
+    "Connectivity": 90,
+    "Returns & Refunds": 37,
+    "Billing & Payments": 92,
+    "App & Firmware": 17,
+    "Account & Login": 15,
+    "Charging & Battery": 61
+  },
+  "other_total": 1732,
+  "flagged_for_retraining": [
+    "A3004",
+    "A3007",
+    "A3005",
+    "A3006"
+  ]
+}
