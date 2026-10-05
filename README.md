@@ -65,6 +65,12 @@ assessment; in a real engagement client data would not live in a public repo).
    + CI working as intended, not a bug. Tier 2 is excluded on policy grounds.
 3. Legacy rows (`source_system=legacy_fd`) are only trustworthy after the
    +5:30 shift in `clean()`; never compute handle time from raw legacy fields.
+   Joins are on `agent_id` only — two agents share the display name
+   "Kavya Pandey" (Sameer's warning in the email thread).
+
+The email thread matters: Neha's triage-rota objection is answered empirically
+in `pipeline.py > rota_check()` (queues no angrier, deficit persists on calm
+tickets, predates the wave) — read that before re-litigating the flag list.
 
 ## Known limitations
 

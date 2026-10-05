@@ -130,7 +130,7 @@ def main():
                 f'<td>{a["site"]}/{a["shift"]}</td><td>{a["tickets"]}</td><td>{a["csat_raw"]}</td>'
                 f'<td>{adj} ± {ci}</td><td>{a["median_handle_hrs"]}</td>'
                 f'<td>{a["breach_rate_pct"]}%</td><td>{a["repeat_rate_pct"]}%</td>'
-                f'<td>{"RETRAIN" if a["flag_retrain"]=="Y" else ""}</td></tr>')
+                f'<td>{"RETRAIN" if a["flag_retrain"]=="Y" else ("BONUS ★" if a.get("flag_top5_bonus")=="Y" else "")}</td></tr>')
 
     t1 = "".join(row(a) for a in agents if a["tier"] == "1")
     t2 = "".join(row(a) for a in agents if a["tier"] == "2")
@@ -173,7 +173,13 @@ This — not agent performance — is what dragged CSAT from Nov 2025.</p>
 <p class="note">"CSAT vs expected" compares each agent's scores with the average for the same
 category×channel cell, so an agent who drew hard warranty chats is not punished for the draw.
 Flagged rows are below expectation even at the bottom of their 95% confidence interval
-(min 20 surveys).</p>
+(min 20 surveys); BONUS ★ marks the top five on the same basis (Diwali bonus list).</p>
+<p class="note"><b>The triage-rota objection, tested.</b> Ops flagged that the hardware
+triage rota "gets the angriest customers by design." Checked: the four flagged agents'
+queues are no angrier than their chat peers' (16% vs 18% angry-language share), their
+deficit persists on calm tickets only (−0.30 vs +0.19 for peers), and it predates the
+defect wave (−0.13 pre-Nov 2025). The flag reflects the person, not the queue —
+details in findings.json → rota_check.</p>
 <div class="wrap"><table>{thead}{t1}</table></div>
 
 <h2>Tier 2 — Escalations &amp; Warranty (reported separately per policy §6)</h2>

@@ -12,6 +12,7 @@ Stdlib only. `python3 src/pipeline.py` from the repo root.
 
 import csv
 import json
+import re
 import statistics
 import sys
 from collections import Counter, defaultdict
@@ -212,10 +213,60 @@ def agent_scorecard(tickets, agents, agent_repeat, agent_resolved):
     t1.sort(key=lambda r: r["csat_adj_residual"])
     flagged = [r["agent_id"] for r in t1
                if r["csat_adj_residual"] + (r["adj_ci95"] or 0) < 0][:10]
+    # Diwali bonus (Priya's first email): top five, same adjusted basis,
+    # deficit-free at the bottom of the CI so the bonus isn't paid on noise.
+    top5 = [r["agent_id"] for r in reversed(t1)
+            if r["csat_adj_residual"] - (r["adj_ci95"] or 0) > 0][:5]
     for r in rows:
         r["flag_retrain"] = "Y" if r["agent_id"] in flagged else ""
+        r["flag_top5_bonus"] = "Y" if r["agent_id"] in top5 else ""
     rows.sort(key=lambda r: (r["tier"], r["csat_adj_residual"] if r["csat_adj_residual"] is not None else 99))
-    return rows, flagged
+    return rows, flagged, top5
+
+
+ANGER_RX = re.compile(
+    r"losing patience|not acceptable|last time i buy|refund\W+now|on twitter"
+    r"|pathetic|really frustrating|very disappointing|how you treat me|escalate this", re.I)
+
+
+def is_angry(msg):
+    caps = sum(1 for c in msg if c.isupper()) / max(1, sum(1 for c in msg if c.isalpha()))
+    return bool(ANGER_RX.search(msg)) or caps > 0.7
+
+
+def rota_check(tickets, flagged, agents):
+    """Neha Kulkarni's objection (email thread): the hardware-triage rota gets
+    the angriest customers by design, so a bottom ranking may be the queue, not
+    the person. Test it three ways for the flagged agents vs their chat-T1
+    peers: anger share of their queues, CSAT residual on NON-angry tickets
+    only, and residual before the defect wave (pre Nov 2025)."""
+    peers = {aid for aid, m in agents.items()
+             if m["team"] == "Chat Frontline" and m["tier"] == "1"} - set(flagged)
+
+    def residuals(ids, only_calm=False, only_prewave=False):
+        cell = defaultdict(list)
+        for r in tickets:
+            if r["_csat"] is None:
+                continue
+            if only_calm and is_angry(r["customer_message"]):
+                continue
+            if only_prewave and r["created_at"][:7] >= "2025-11":
+                continue
+            cell[(r["category"], r["channel"])].append((r["agent_id"], r["_csat"]))
+        mean = {k: sum(s for _, s in v) / len(v) for k, v in cell.items()}
+        res = [s - mean[k] for k, v in cell.items() for a, s in v if a in ids]
+        return round(sum(res) / len(res), 2) if res else None, len(res)
+
+    out = {}
+    for label, ids in [("flagged", set(flagged)), ("peer_chat_t1", peers)]:
+        n = [r for r in tickets if r["agent_id"] in ids]
+        angry_pct = round(100 * sum(1 for r in n if is_angry(r["customer_message"])) / len(n), 1)
+        calm_resid, calm_n = residuals(ids, only_calm=True)
+        pre_resid, pre_n = residuals(ids, only_prewave=True)
+        out[label] = {"angry_queue_pct": angry_pct,
+                      "csat_resid_nonangry": calm_resid, "n_nonangry": calm_n,
+                      "csat_resid_prewave": pre_resid, "n_prewave": pre_n}
+    return out
 
 
 def reclassify_other(tickets):
@@ -242,8 +293,11 @@ def main():
     lots, lot_summary = lot_analysis(tickets, orders)
     wave = defect_wave_cost(tickets, orders, products)
     rep, agent_rep, agent_res = repeat_contacts(tickets)
-    scorecard, flagged = agent_scorecard(tickets, agents, agent_rep, agent_res)
+    scorecard, flagged, top5 = agent_scorecard(tickets, agents, agent_rep, agent_res)
     other_rows, moved = reclassify_other(tickets)
+    rota = rota_check(tickets, flagged, agents)
+    replacements_monthly = Counter(r["created_at"][:7] for r in tickets
+                                   if r["replacement_issued"] == "Y")
 
     # SLA + transfer money, double-dip check
     total_breaches = sum(1 for r in tickets if r["_first_resp"] and r["_created"] and r["_done"]
@@ -263,6 +317,9 @@ def main():
         "other_reclassified": dict(moved),
         "other_total": len(other_rows),
         "flagged_for_retraining": flagged,
+        "top5_bonus": top5,
+        "rota_check": rota,
+        "replacements_by_month": {k: replacements_monthly[k] for k in sorted(replacements_monthly)},
     }
     with open(OUT / "findings.json", "w") as f:
         json.dump(findings, f, indent=2)

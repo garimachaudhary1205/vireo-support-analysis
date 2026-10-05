@@ -26,14 +26,27 @@ again with the next bad lot unless someone is watching ticket-rate per lot.
 This wave was visible in the data by mid-November; it ran unflagged for four
 months. Catching the next one a month in is worth most of that ₹21L.
 
-## Who to retrain
+This also settles the Arjun/Rohan question from the thread: festive volume was
+up ~30%, but replacements went from ~60 a month (Oct) to ~300 a month (Feb) —
+a 5× jump. That is defect rate, not volume catching up. (And on the arithmetic
+dispute: policy says a Pulse 2 replacement is ₹1,820; Arjun's ₹2,500 "all-in"
+is about right once you add the contact that raised it and the repeat contacts
+that follow — you were both right.)
 
-After adjusting each agent's scores for the tickets they actually drew
-(an agent handed charging complaints all day will score low no matter how good
-they are), **only four agents are genuinely below expectation**, all Chat
-Frontline: **Siddharth Kapoor, Siddharth Trivedi, Zaid Khanna, Kavya Pandey
-(A3006, Indore)**. They also run repeat-contact rates of 20–27%. That is a
-coachable skills gap — train these four.
+## Who to retrain — and Neha's rota point, tested
+
+After adjusting each agent's scores for the tickets they actually drew,
+**only four agents are genuinely below expectation**, all Chat Frontline:
+**Siddharth Kapoor, Siddharth Trivedi, Zaid Khanna, Kavya Pandey (A3006,
+Indore)** — with repeat-contact rates of 20–27%.
+
+Neha warned the hardware triage rota gets the angriest customers by design, so
+we tested exactly that before flagging anyone: these four's queues are **no
+angrier** than their chat peers' (16% vs 18% angry-language share), their gap
+**persists on calm tickets alone** (−0.30 vs +0.19), and it **existed before
+the defect wave**. This is the person, not the queue — a coachable skills gap.
+At ₹4L for four people that budget now covers real coaching, not a spray
+across ten.
 
 Two groups the raw numbers would have told you to retrain, but shouldn't:
 
@@ -41,6 +54,9 @@ Two groups the raw numbers would have told you to retrain, but shouldn't:
   they caught the warranty wave. Your own policy (§6) says not to measure them
   this way. Retraining them buys you nothing.
 - Everyone else is within normal range once ticket mix is accounted for.
+
+**Diwali bonus (top five, same adjusted basis):** Kunal Pillai, Steven Ghosh,
+Sukhwinder Rao, Vihaan Menon, Aarav Pereira.
 
 ## Three things worth doing this quarter
 

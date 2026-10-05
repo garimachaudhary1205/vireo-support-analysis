@@ -23,7 +23,10 @@ within 30 days, ₹8.4L of re-handling over the 18 months.
 ## What does one run cost? A month at ~650 tickets/week?
 
 The default run makes **no paid calls**: stdlib Python + a rules classifier.
-₹0 per run, ₹0 per month.
+₹0 per run, ₹0 per month. This is deliberate — Arjun's email set the
+constraint ("no per-ticket model calls at Rs 5 a pop across twelve thousand
+tickets"), and the free-text work that matters here doesn't need a model per
+ticket.
 
 The optional LLM pass (Claude Haiku 4.5, $1/M input, $5/M output tokens) covers
 only tickets the rules can't place. Backfill: 1,732 'Other' tickets × ~130
@@ -51,13 +54,24 @@ Three checks, error rates included:
 
 ## Did you change, narrow, or push back on the client's ask?
 
-Yes, twice. Priya asked for "the bottom ten to retrain." (1) Her own policy
-(§6) forbids comparing Tier-2 agents on these metrics — a naive bottom ten is
-six Tier-2 agents who caught the warranty wave. (2) After mix-adjustment with
-confidence intervals, only **4** Tier-1 agents are credibly below expectation;
-flagging six more would spend training budget on noise. We also used
-orders.csv, which she said to ignore — the lot codes in it are the entire
-explanation for her CSAT slide.
+Yes, three times. Priya asked for "the bottom ten to retrain." (1) Her own
+policy (§6) forbids comparing Tier-2 agents on these metrics — a naive bottom
+ten is six Tier-2 agents who caught the warranty wave. (2) After mix-adjustment
+with confidence intervals, only **4** Tier-1 agents are credibly below
+expectation; flagging six more would spend the ₹4L training budget on noise.
+(3) We used orders.csv, which she said to ignore — the lot codes in it are the
+entire explanation for her CSAT slide, and they settle the Arjun/Rohan
+replacement-spend dispute from the email thread (replacements went 61/month →
+305/month while volume rose ~30%: defect rate, not festive volume).
+
+We also took Neha Kulkarni's objection seriously instead of routing around it:
+she warned the hardware-triage rota ("Kavya's four") gets the angriest
+customers by design. We tested it — the flagged four's queues are no angrier
+than peers' (16% vs 18%), their deficit persists on calm tickets only
+(−0.30 vs +0.19) and predates the defect wave. The flag survived the test;
+the test is in the pipeline (`findings.json > rota_check`), not a footnote.
+Priya's "top five get the Diwali bonus" is also delivered, on the same
+adjusted basis, so the bonus isn't paid on an easy queue.
 
 ## What is wrong with what you are handing us?
 
